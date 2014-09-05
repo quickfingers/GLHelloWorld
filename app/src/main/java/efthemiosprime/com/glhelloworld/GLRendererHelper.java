@@ -1,5 +1,6 @@
 package efthemiosprime.com.glhelloworld;
 
+import android.content.Context;
 import android.opengl.GLSurfaceView;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -11,6 +12,14 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
 public class GLRendererHelper implements GLSurfaceView.Renderer {
+
+    private Context m_Context;
+    private PointLight m_PointLight;
+    private Camera m_Camera;
+    private int m_ViewPortWidth;
+    private int m_ViewPortHeight;
+    private Cube m_Cube;
+
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
         // called when an new surface has been created
@@ -26,5 +35,10 @@ public class GLRendererHelper implements GLSurfaceView.Renderer {
     @Override
     public void onDrawFrame(GL10 gl10) {
         // put code to draw 3d objects to screen here
+    }
+
+    void SetupLights()
+    {
+
     }
 }
