@@ -20,6 +20,11 @@ public class GLRendererHelper implements GLSurfaceView.Renderer {
     private int m_ViewPortHeight;
     private Cube m_Cube;
 
+    public GLRendererHelper(Context context)
+    {
+        m_Context = context;
+    }
+
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
         // called when an new surface has been created
@@ -39,6 +44,26 @@ public class GLRendererHelper implements GLSurfaceView.Renderer {
 
     void SetupLights()
     {
+        Vector3 LightPosition = new Vector3(0, 125, 125);
 
+        float[] AmbientColor = new float[3];
+        AmbientColor[0] = 0.0f;
+        AmbientColor[1] = 0.0f;
+        AmbientColor[2] = 0.0f;
+
+        float[] DiffuseColor = new float[3];
+        DiffuseColor[0] = 1.0f;
+        DiffuseColor[1] = 1.0f;
+        DiffuseColor[2] = 1.0f;
+
+        float[] SpecularColor = new float[3];
+        SpecularColor[0] = 1.0f;
+        SpecularColor[1] = 1.0f;
+        SpecularColor[2] = 1.0f;
+
+        m_PointLight.SetPosition(LightPosition);
+        m_PointLight.SetAmbientColor(AmbientColor);
+        m_PointLight.SetDiffuseColor(DiffuseColor);
+        m_PointLight.SetSpecularColor(SpecularColor);
     }
 }
