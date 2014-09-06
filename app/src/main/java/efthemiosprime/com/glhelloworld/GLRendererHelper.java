@@ -66,4 +66,20 @@ public class GLRendererHelper implements GLSurfaceView.Renderer {
         m_PointLight.SetDiffuseColor(DiffuseColor);
         m_PointLight.SetSpecularColor(SpecularColor);
     }
+
+    void SetupCamera()
+    {
+        Vector3 Eye = new Vector3(0,0,8);
+        Vector3 Center = new Vector3(0,0, -1);
+        Vector3 Up = Vector3.up();
+
+        float ratio = (float) m_ViewPortWidth / m_ViewPortHeight;
+        float ProjLeft = -ratio;
+        float ProjRight = ratio;
+        float ProjBottom = -1;
+        float ProjTop = 1;
+        float Projnear = 3;
+        float Projfar = 50;
+
+    }
 }

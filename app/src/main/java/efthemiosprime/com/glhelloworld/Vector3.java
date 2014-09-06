@@ -72,5 +72,6 @@ public class Vector3 {
     {
         return new Vector3(0,0,0);
     }
+    static Vector3 up() {return  new Vector3(0,1,0);}
 
 }
